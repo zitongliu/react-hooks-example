@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 function Counter() {
 
     const [count, setCount] = useState(0);
+    const handleIncrease = () => setCount(count + 1);
+    const handleDecrease = () => setCount(count - 1);
+    const handleReset = () => setCount(0);
 
     return (
         <div
@@ -16,8 +19,9 @@ function Counter() {
         >
             <h2>counter</h2>
             <blockquote>{count}</blockquote>
-            <button onClick={() => setCount(count + 1)}>Add</button>
-            <button onClick={() => setCount(count - 1)}>Subtract</button>
+            <button onClick={handleIncrease}>Add</button>
+            <button onClick={handleDecrease}>Subtract</button>
+            <button onClick={handleReset}>Reset</button>
         </div>
 
     );
